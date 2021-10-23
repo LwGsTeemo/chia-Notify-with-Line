@@ -2,9 +2,9 @@ import requests
 import time
 
 alertPlotSizeTib = 150
-lineToken = '5GwyfbOA7RxjwIpLP3UVtpPuYPs9ZBdwWzUzu9jGuLx'
-userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36"
-spacePoolId = "0xaa44f53b655e33a2d565786bfc5537f992d90ca48e28a01695994e38c004b15c"
+lineToken = 'your line token'
+userAgent = "your userAgent"
+spacePoolId = "your Spacepool ID"
 
 def lineNotifyMessage(token, msg):
     lineHeaders = {

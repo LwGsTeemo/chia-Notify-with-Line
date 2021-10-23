@@ -1,6 +1,7 @@
 import requests
 import time
 
+#讀取config.txt 動態調整參數
 filePath = './config.txt'
 file = open(filePath, 'r')
 config=[]
@@ -10,6 +11,9 @@ for i in allLines:
 alertPlotSizeTib,lineToken,userAgent,spacePoolId = config[0:4]
 
 def lineNotifyMessage(token, msg):
+    '''
+    Line的通知傳送
+    '''
     lineHeaders = {
         "Authorization": "Bearer " + token, 
         "Content-Type" : "application/x-www-form-urlencoded"
@@ -19,12 +23,18 @@ def lineNotifyMessage(token, msg):
     return r.status_code
 
 def lineShowStatistics(eachProfile):
+    '''
+    將SpacePool的個人統計數據回傳給Line做通知
+    '''
     statistic ="\n"
     for i in eachProfile:
         statistic += i+"\n"
     lineNotifyMessage(lineToken, statistic)
 
 def lineShowWarning(estimatedPlotSizeTiB,alertPlotSizeTib,lineToken):
+    '''
+    警示提醒功能
+    '''
     if estimatedPlotSizeTiB <= float(alertPlotSizeTib):
         warningMessage = "\nWarning! Your Plotsize is about "+str(estimatedPlotSizeTiB)+"TiB,and is under "+str(alertPlotSizeTib)+"TiB !"
         lineNotifyMessage(lineToken, warningMessage)

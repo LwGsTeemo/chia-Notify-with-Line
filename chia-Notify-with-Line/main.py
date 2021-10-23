@@ -48,7 +48,7 @@ spacePoolHeaders = {
     "Developer-Key": "O0jlUJr1Es2lEsqdQmSZTTnfc5Q2pxCUc8pKWXQ3Czz18EmTANYvnVoAjIyX3EYT",
     "User-Agent": userAgent
 }
-print("start notice!")
+print("start notice! press \"ctrl+c\" to exit...")
 cnt=0
 initialize()
 while(1):

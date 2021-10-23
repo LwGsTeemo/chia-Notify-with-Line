@@ -11,6 +11,6 @@ def lineNotifyMessage(token, msg):
     return r.status_code
 
 
-token = '5GwyfbOA7RxjwIpLP3UVtpPuYPs9ZBdwWzUzu9jGuLx'
+token = 'your private token'
 message = '基本功能測試'
 lineNotifyMessage(token, message)

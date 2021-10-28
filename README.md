@@ -1,9 +1,13 @@
 # chia-Notify-with-Line 警示程式
+
+![palm](https://user-images.githubusercontent.com/72924522/139286547-a4a570ef-2363-4cc0-ba83-586e57527537.png)
+<br>
 It's an .exe file that can notify your chia profit and warning message every time automatically.<br><br>
 >這是我自行設計的小程式，有轉成.exe檔了，可以在沒有安裝python的電腦下執行<br>
 >其功能為透過LineNotify與SpacePool作連動<br>
 >若是收割機離線，能夠在LINE上面收到通知!，就可以及早排除問題<br>
 >還可以定時收到SpacePool即時的統計數據:D<br>
+
 
 # Installing 安裝
 https://github.com/LwGsTeemo/chia-Notify-with-Line/releases/tag/v1.0.0

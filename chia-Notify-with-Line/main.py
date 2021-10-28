@@ -45,12 +45,20 @@ def getInfo():
     k = farmsprofile.find("estimatedPlotSizeTiB")
     estimatedPlotSizeTiB = float(farmsprofile[k+22:k+27])
     eachProfile = farmsprofile[1:-1].split(",")
-    return estimatedPlotSizeTiB,eachProfile
+    currentBlockFound = int(eachProfile[3][14:])
+    return estimatedPlotSizeTiB,eachProfile,currentBlockFound
 
 def initialize():
-    estimatedPlotSizeTiB,eachProfile=getInfo()
+    estimatedPlotSizeTiB,eachProfile,currentBlockFound=getInfo()
     lineShowStatistics(eachProfile)
     lineShowWarning(estimatedPlotSizeTiB,alertPlotSizeTib,lineToken)
+
+def isFoundBlock(currentBlockFound,block):
+    if currentBlockFound > block:
+        Message = "\nCongratulations! You win a block!\nYou now have found "+str(currentBlockFound)+" blocks! "
+        lineNotifyMessage(lineToken, Message)
+        block = currentBlockFound
+    return block
 
 url = "https://developer.pool.space/api/v1/farms/"+spacePoolId
 spacePoolHeaders = {
@@ -60,9 +68,12 @@ spacePoolHeaders = {
 }
 print("start notice! press \"ctrl+c\" to exit...")
 cnt=0
+block=1
 initialize()
 while(1):
-    estimatedPlotSizeTiB,eachProfile = getInfo()
+    estimatedPlotSizeTiB,eachProfile,currentBlockFound = getInfo()
+    lineShowStatistics(eachProfile)
+    block = isFoundBlock(currentBlockFound,block)
     lineShowWarning(estimatedPlotSizeTiB,alertPlotSizeTib,lineToken)
     cnt+=1
     if cnt==12:

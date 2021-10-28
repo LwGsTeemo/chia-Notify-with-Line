@@ -72,7 +72,6 @@ block=1
 initialize()
 while(1):
     estimatedPlotSizeTiB,eachProfile,currentBlockFound = getInfo()
-    lineShowStatistics(eachProfile)
     block = isFoundBlock(currentBlockFound,block)
     lineShowWarning(estimatedPlotSizeTiB,alertPlotSizeTib,lineToken)
     cnt+=1

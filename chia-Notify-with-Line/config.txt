@@ -1,4 +1,4 @@
-alertPlotSizeTib=
-lineToken=
-userAgent=
-spacePoolId=
+alertPlotSizeTib=900
+lineToken=3CPJnjh5LK7kDx7gnrKHhmAegZWtgTlczYKjVYR18MU
+userAgent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+spacePoolId=0xaa44f53b655e33a2d565786bfc5537f992d90ca48e28a01695994e38c004b15c
